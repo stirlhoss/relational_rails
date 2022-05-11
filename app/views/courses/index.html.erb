@@ -1,0 +1,11 @@
+<html>
+    <h1> All Courses</h1>
+    <body>
+        <% @courses.each do |course| %>
+            <h3>Name: <%= course.name %> </h3>
+            <p>Permanent: <%= course.permanent %></p>
+            <p>Par: <%= course.par %></p>
+            <p>Difficulty Rating (out of 5): <%= course.difficulty %></p>
+        <% end %>
+    </body>
+</html>
