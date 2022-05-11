@@ -40,6 +40,7 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'solargraph'
 end
 
 group :development do
