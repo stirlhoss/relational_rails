@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
 
   get '/courses', to: 'courses#index'
-  get '/courses/new', to: 'courses#new'
-  post '/courses', to: 'courses#create'
+  # get '/courses/new', to: 'courses#new'
+  # post '/courses', to: 'courses#create'
 end

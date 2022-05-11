@@ -7,7 +7,10 @@ RSpec.describe 'course index page', type: :feature do
 
       visit "/courses"
 
+      save_and_open_page
+
       expect(page).to have_content(course.name)
+      expect(page).to have_content(course2.name)
   end
 
 end
