@@ -7,7 +7,7 @@ RSpec.describe 'course show page ' do
                             par: 3,
                             difficulty: 3)
     @course2 = Course.create!(name: 'Eureka',
-                             permanent: false,
+                             permanent: true,
                              par: 4,
                              difficulty: 5)
   end
@@ -23,4 +23,12 @@ RSpec.describe 'course show page ' do
     expect(page).to have_content(@course1.difficulty)
   end
 
+  it 'dose not display information for other courses' do
+    visit "/courses/#{@course1.id}"
+
+
+    expect(page).to_not have_content(@course2.name)
+    expect(page).to_not have_content(@course2.par)
+    expect(page).to_not have_content(@course2.difficulty)
+  end
 end
