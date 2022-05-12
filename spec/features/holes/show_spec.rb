@@ -19,6 +19,12 @@ RSpec.describe "Holes show page" do
   end
   it 'can display a certain hole based on its id' do
     visit "/holes/#{@hole1.id}"
+
+    expect(page).to have_content(@hole1.name)
+    expect(page).to have_content(@hole1.permanent)
+    expect(page).to have_content(@hole1.par)
+    expect(page).to have_content(@hole1.difficulty)
+    expect(page).to have_content(@hole1.course_id)
   end
 
 end
