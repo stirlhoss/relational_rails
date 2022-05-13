@@ -23,8 +23,16 @@ RSpec.describe "Holes show page" do
     expect(page).to have_content(@hole1.name)
     expect(page).to have_content(@hole1.permanent)
     expect(page).to have_content(@hole1.par)
-    expect(page).to have_content(@hole1.difficulty)
+    expect(page).to have_content(@hole1.distance_to_pin)
     expect(page).to have_content(@hole1.course_id)
+  end
+
+  it 'will not display any intformation on other holes' do
+    visit "/holes/#{@hole1.id}"
+
+    expect(page).to_not have_content(@hole2.name)
+    expect(page).to_not have_content(@hole2.par)
+    expect(page).to_not have_content(@hole2.distance_to_pin)
   end
 
 end
