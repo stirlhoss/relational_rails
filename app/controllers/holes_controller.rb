@@ -3,4 +3,7 @@ class HolesController < ApplicationController
     @holes = Hole.all
   end
 
+  def show
+    @hole = Hole.find(params[:id])
+  end
 end

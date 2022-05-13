@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   # get '/courses/new', to: 'courses#new'
   # post '/courses', to: 'courses#create'
   get '/holes', to: 'holes#index'
+  get '/holes/:id', to: 'holes#show'
 end
