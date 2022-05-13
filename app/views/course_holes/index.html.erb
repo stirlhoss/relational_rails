@@ -1,0 +1,9 @@
+<h1><%= @course.name %></h1>
+<body>
+    <% @course.holes.each do |hole| %>
+        <h3><%= hole.name %></h3>
+        <p><%= hole.distance_to_pin %></p>
+        <p><%= hole.par %></p>
+        <p><%= hole.permanent %></p>
+    <% end %>
+</body>
