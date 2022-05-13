@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   # post '/courses', to: 'courses#create'
   get '/holes', to: 'holes#index'
   get '/holes/:id', to: 'holes#show'
+
+  get '/courses/:parent_id/holes', to: 'course_holes#index'
 end
