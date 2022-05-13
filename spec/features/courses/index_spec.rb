@@ -7,7 +7,7 @@ RSpec.describe 'courses index page', type: :feature do
                             par: 3,
                             difficulty: 3)
     course2 = Course.create!(name: 'Eureka',
-                             permanent: false,
+                             permanent: true,
                              par: 4,
                              difficulty: 5)
 

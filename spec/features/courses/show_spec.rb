@@ -15,7 +15,6 @@ RSpec.describe 'course show page ' do
   it 'can display a certain course based on its id' do
     visit "/courses/#{@course1.id}"
 
-    save_and_open_page
 
     expect(page).to have_content(@course1.name)
     expect(page).to have_content(@course1.permanent)
@@ -28,6 +27,7 @@ RSpec.describe 'course show page ' do
 
 
     expect(page).to_not have_content(@course2.name)
+
     expect(page).to_not have_content(@course2.par)
     expect(page).to_not have_content(@course2.difficulty)
   end
