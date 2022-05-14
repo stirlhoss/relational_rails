@@ -10,6 +10,21 @@ RSpec.describe 'course show page ' do
                              permanent: true,
                              par: 4,
                              difficulty: 5)
+    @hole1 = Hole.create!(name: 'Hole 1',
+                          distance_to_pin: 330,
+                          par: 3,
+                          permanent: true,
+                          course_id: @course1.id)
+    @hole2 = Hole.create!(name: 'Hole 2',
+                          distance_to_pin: 370,
+                          par: 4,
+                          permanent: true,
+                          course_id: @course1.id)
+    @hole3 = Hole.create!(name: 'Over the Resevoir',
+                          distance_to_pin: 520,
+                          par: 4,
+                          permanent: true,
+                          course_id: @course2.id)
   end
 
   it 'can display a certain course based on its id' do
@@ -30,5 +45,11 @@ RSpec.describe 'course show page ' do
 
     expect(page).to_not have_content(@course2.par)
     expect(page).to_not have_content(@course2.difficulty)
+  end
+
+  it 'displays a hole count for the course you are looking at' do
+    visit "/courses/#{@course1.id}"
+
+    expect(page).to have_content('Hole count: 2')
   end
 end

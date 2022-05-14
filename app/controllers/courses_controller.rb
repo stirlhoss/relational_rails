@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   def index
-    @courses = Course.all.order(created_at: :desc)
+    @courses = Course.order_by_recently_created
   end
 
   def show
@@ -8,5 +8,4 @@ class CoursesController < ApplicationController
   end
 
   def new; end
-
 end
