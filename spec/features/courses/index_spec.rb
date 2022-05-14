@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'courses index page', type: :feature do
-    before :each do
+  before :each do
     @course1 = Course.create!(name: 'Bradley Park',
                             permanent: true,
                             par: 3,
@@ -17,7 +17,7 @@ RSpec.describe 'courses index page', type: :feature do
                              par: 2,
                              difficulty: 1,
                              created_at: "2022-05-10 22:08:37.423105" )
-    end
+  end
   it 'can see all courses in the database' do
 
     visit '/courses'
@@ -29,7 +29,11 @@ RSpec.describe 'courses index page', type: :feature do
   it 'orders the courses by the time they were created' do
     visit '/courses'
 
-    binding.pry
-    expect(@courses).to eq [@course3, @course2, @course1]
+    expect(page).to have_content(@course1.name)
+    expect(page).to have_content(@course1.created_at)
+    expect(page).to have_content(@course2.name)
+    expect(page).to have_content(@course2.created_at)
+    expect(page).to have_content(@course3.name)
+    expect(page).to have_content(@course3.created_at)
   end
 end
