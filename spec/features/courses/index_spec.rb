@@ -36,4 +36,12 @@ RSpec.describe 'courses index page', type: :feature do
     expect(page).to have_content(@course2.created_at)
     expect(page).to have_content(@course3.created_at)
   end
+
+  it 'has a link to courses index at the top of each page' do
+    visit '/holes'
+    expect(page).to have_link('Courses')
+
+    visit '/courses'
+    expect(page).to have_link('Courses')
+  end
 end

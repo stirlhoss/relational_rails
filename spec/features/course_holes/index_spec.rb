@@ -36,4 +36,14 @@ RSpec.describe 'Course Holes Index', type: :feature do
 
     expect(page).to_not have_content(@hole3.name)
   end
+
+  it 'has links to the child table at the top of the page' do
+    visit "/courses/#{@course1.id}"
+
+    expect(page).to have_link("Holes at this course")
+
+    click_link("Holes at this course")
+
+    expect(current_path).to eq "/courses/#{@course1.id}/holes"
+  end
 end

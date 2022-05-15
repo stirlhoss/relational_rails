@@ -26,4 +26,12 @@ RSpec.describe 'holes index page', type: :feature do
     expect(page).to have_content(@hole1.par)
     expect(page).to have_content(@hole1.permanent)
   end
+
+  it 'has a link to courses index at the top of each page' do
+    visit '/holes'
+    expect(page).to have_link('Holes')
+
+    visit '/courses'
+    expect(page).to have_link('Holes')
+  end
 end
