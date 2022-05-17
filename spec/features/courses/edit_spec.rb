@@ -29,7 +29,7 @@ RSpec.describe 'courses#edit' do
     fill_in 'Permanent', with: true
     click_button 'Update Course'
 
-    expect(current_path).to eq('/courses')
+    expect(current_path).to eq("/courses/#{course.id}")
     expect(page).to have_content('Megido')
     expect(page).to have_content('Difficulty Rating (out of 5): 4')
     expect(page).to have_content('Par: 4')

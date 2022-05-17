@@ -21,14 +21,15 @@ class CoursesController < ApplicationController
   def update
     course = Course.find(params[:id])
     course.update(course_params)
-    redirect_to '/courses'
+    redirect_to "/courses/#{course.id}"
   end
+
+  private
 
   def course_params
     params.permit(:name,
                   :par,
                   :difficulty,
-                  :permanent
-                 )
+                  :permanent)
   end
 end
