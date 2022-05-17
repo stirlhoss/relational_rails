@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   patch '/courses/:id', to: 'courses#update'
   get '/courses/:id/edit', to: 'courses#edit'
 
-  get '/courses/:parent_id/holes', to: 'course_holes#index'
+  get '/courses/:course_id/holes', to: 'course_holes#index'
   post '/courses/:course_id/holes', to: 'course_holes#create'
-  get '/courses/:parent_id/holes/new', to: 'course_holes#new'
+  get '/courses/:course_id/holes/new', to: 'course_holes#new'
 
   get '/holes', to: 'holes#index'
   get '/holes/:id', to: 'holes#show'

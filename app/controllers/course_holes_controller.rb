@@ -10,7 +10,6 @@ class CourseHolesController < ApplicationController
   def create
     hole = Hole.create(hole_params)
     redirect_to "/courses/#{hole.course_id}/holes"
-
   end
 
   private
