@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <h1><a href='/courses'>Courses</a> <a href='/holes'>Holes</a></h1>
+    <h1><%= link_to "Courses",'/courses' %> <%= link_to "holes", '/holes' %></h1>
     <%= yield %>
   </body>
 </html>
