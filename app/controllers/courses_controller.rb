@@ -10,7 +10,15 @@ class CoursesController < ApplicationController
   def new; end
 
   def create
-    course = Course.create(name: params[:name], par: params[:par], difficulty: params[:difficulty], permanent: params[:permanent])
+    course = Course.create(course_params)
     redirect_to "/courses"
+  end
+
+  def course_params
+    params.permit(:name,
+                  :par,
+                  :difficulty,
+                  :permanent
+                 )
   end
 end
