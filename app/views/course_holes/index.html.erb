@@ -2,9 +2,9 @@
 <body>
     <%= link_to "Create Hole", "/courses/#{@course.id}/holes/new" %>
     <% @course.holes.each do |hole| %>
-        <h3><%= hole.name %></h3>
-        <p><%= hole.distance_to_pin %></p>
-        <p><%= hole.par %></p>
-        <p><%= hole.permanent %></p>
+        <h3>Name: <%= hole.name %></h3>
+        <p>Distance to pin: <%= hole.distance_to_pin %></p>
+        <p>Par: <%= hole.par %></p>
+        <p>Permanent: <%= hole.permanent %></p>
     <% end %>
 </body>

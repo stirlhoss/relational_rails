@@ -1,0 +1,11 @@
+<%= form_with url:"/courses/#{@course.id}/holes", method: :post, local: true do |form| %>
+    <%=form.label :name %>
+    <%=form.text_field :name %>
+    <%=form.label :distance_to_pin %>
+    <%=form.text_field :distance_to_pin %>
+    <%=form.label :par %>
+    <%=form.text_field :par %>
+    <%=form.label :permanent %>
+    <%=form.text_field :permanent %>
+    <%= form.submit "Create Hole" %>
+<% end %>
