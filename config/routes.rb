@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get '/holes/:id', to: 'holes#show'
 
   get '/courses/:parent_id/holes', to: 'course_holes#index'
+  get '/courses/:parent_id/holes/new', to: 'course_holes#new'
 end

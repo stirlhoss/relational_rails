@@ -1,5 +1,6 @@
 <h1><%= @course.name %></h1>
 <body>
+    <%= link_to "Create Hole", "/courses/#{@course.id}/holes/new" %>
     <% @course.holes.each do |hole| %>
         <h3><%= hole.name %></h3>
         <p><%= hole.distance_to_pin %></p>
