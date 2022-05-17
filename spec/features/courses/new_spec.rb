@@ -28,13 +28,11 @@ RSpec.describe 'Courses new' do
       fill_in('Permanent', with: 'true')
       click_button('Create Course')
 
-      new_course_id = Course.last.id
-      expect(current_path).to eq("/courses/#{new_course_id}")
+      expect(current_path).to eq('/courses')
       expect(page).to have_content('Northwoods')
       expect(page).to have_content('Par: 5')
-      expect(page).to have_content('Difficulty Rating: 5')
+      expect(page).to have_content('Difficulty Rating (out of 5): 5')
       expect(page).to have_content('Permanent: true')
     end
   end
-
 end

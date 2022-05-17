@@ -11,6 +11,6 @@ class CoursesController < ApplicationController
 
   def create
     course = Course.create(name: params[:name], par: params[:par], difficulty: params[:difficulty], permanent: params[:permanent])
-    redirect_to "/courses/#{course.id}"
+    redirect_to "/courses"
   end
 end
