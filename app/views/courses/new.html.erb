@@ -1,9 +1,11 @@
-<form action="/courses" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <p> Enter a new course:</p>
-    <input type='text' name='course[name]'/><br/>
-    <textarea name='course[permanent]'></textarea><br/>
-    <textarea name='course[par]'></textarea><br/>
-    <textarea name='course[difficulty]'></textarea><br/>
-    <input type='submit'/>
-</form>
+<%= form_with url:'/courses', method: :post, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :par %>
+    <%= form.text_field :par %>
+    <%= form.label :difficulty %>
+    <%= form.text_field :difficulty %>
+    <%= form.label :permanent %>
+    <%= form.text_field :permanent %>
+    <%= form.submit "Create Course" %>
+<% end %>

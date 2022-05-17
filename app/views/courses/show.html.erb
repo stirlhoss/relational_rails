@@ -1,5 +1,5 @@
 <h1><%= @course.name %></h1>
-<h2><a href= "/courses/<%= @course.id %>/holes">Holes at this course</a></h2>
+<h2><%= link_to "Holes at this course", "/courses/#{@course.id}/holes" %></h2>
 <h3>Par: <%= @course.par %></h3>
 <h3>Difficulty Rating: <%= @course.difficulty %></h3>
 <h3>Permanent: <%= @course.permanent %></h3>
