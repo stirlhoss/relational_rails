@@ -1,5 +1,6 @@
 <html>
     <h1> All Courses</h1>
+    <%= link_to "New Course", "/courses/new" %>
     <body>
         <% @courses.each do |course| %>
             <h3>Name: <%= course.name %> </h3>

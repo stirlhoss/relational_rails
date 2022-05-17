@@ -31,7 +31,6 @@ RSpec.describe "Holes show page" do
     visit "/holes/#{@hole1.id}"
 
     expect(page).to_not have_content(@hole2.name)
-    expect(page).to_not have_content(@hole2.par)
     expect(page).to_not have_content(@hole2.distance_to_pin)
   end
 
