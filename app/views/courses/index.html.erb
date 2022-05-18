@@ -9,6 +9,7 @@
             <p>Difficulty Rating (out of 5): <%= course.difficulty %></p>
             <p>Created at: <%= course.created_at %></p>
             <p><%= button_to "Edit #{course.name}", "/courses/#{course.id}/edit", method: :get %>
+            <p><%= button_to "Delete", "/courses/#{course.id}", method: :delete %></p>
         <% end %>
     </body>
 </html>

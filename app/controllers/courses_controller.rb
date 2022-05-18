@@ -24,6 +24,12 @@ class CoursesController < ApplicationController
     redirect_to "/courses/#{course.id}"
   end
 
+  def destroy
+    course = Course.find(params[:id])
+    course.destroy
+    redirect_to '/courses'
+  end
+
   private
 
   def course_params
