@@ -6,4 +6,5 @@
    <p>Par: <%= hole.par %></p>
    <p>Permanent: <%= hole.permanent %></p>
    <%= link_to "Edit Hole", "/holes/#{hole.id}/edit" %>
+   <%= button_to "Delete", "/holes/#{hole.id}", method: :delete %>
 <% end %>

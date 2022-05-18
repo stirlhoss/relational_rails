@@ -17,6 +17,12 @@ class HolesController < ApplicationController
     redirect_to "/holes/#{hole.id}"
   end
 
+  def destroy
+    hole = Hole.find(params[:id])
+    hole.destroy
+    redirect_to '/holes'
+  end
+
   private
 
   def hole_params

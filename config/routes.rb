@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get '/holes/:id', to: 'holes#show'
   patch '/holes/:id', to: 'holes#update'
   get '/holes/:id/edit', to: 'holes#edit'
+  delete '/holes/:id', to: 'holes#destroy'
 end
