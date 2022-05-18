@@ -1,0 +1,11 @@
+<%= form_with url: "/holes/#{@hole.id}", method: :patch, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :par %>
+    <%= form.text_field :par %>
+    <%= form.label :distance_to_pin %>
+    <%= form.text_field :distance_to_pin %>
+    <%= form.label :permanent %>
+    <%= form.text_field :permanent %>
+    <%= form.submit 'Update Hole' %>
+<% end %>
