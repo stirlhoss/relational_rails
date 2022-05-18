@@ -1,18 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Hole do
-    describe 'validations' do
-      it { should validate_presence_of :name }
-      # it { should validate_presence_of :permanent }
-      it { should validate_presence_of :par }
-      it { should validate_presence_of :distance_to_pin }
-    end
-
-    describe 'relationships' do
-      it { should belong_to :course }
-    end
-
-  describe 'model methods' do
+RSpec.describe 'CourseHoles#AlphaSort' do
+  describe 'alphabetical sort of children' do
     before :each do
       @course1 = Course.create!(name: 'Bradley Park',
                                 permanent: true,
@@ -40,18 +29,20 @@ RSpec.describe Hole do
                             permanent: false,
                             course_id: @course1.id)
     end
+    it 'provides a link that lets reloads the course/holes page with the children sorted' do
+      visit "/courses/#{@course1.id}/holes"
 
-    describe 'boolean sorting' do
-      it 'only shows the holes that are permanent' do
-
-        expect(Hole.permanent_holes).to eq([@hole1])
-      end
+      expect(page).to have_link('Sort Alphabetically')
     end
 
-    describe 'alpha sort' do
-      it 'sorts holes alphabetically' do
-        expect(Hole.alpha_sort).to eq([@hole4, @hole1, @hole2, @hole3])
-      end
+    it 'sorts the children alphabetically when the link is clicked' do
+      visit "/courses/#{@course1.id}/holes"
+      expect(@hole1.name).to appear_before(@hole4.name)
+
+      click_link('Sort Alphabetically')
+
+      expect(@hole4.name).to appear_before(@hole1.name)
     end
+
   end
 end
