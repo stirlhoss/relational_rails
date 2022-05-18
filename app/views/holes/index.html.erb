@@ -5,4 +5,5 @@
    <p>Distance to pin: <%= hole.distance_to_pin %> ft. </p>
    <p>Par: <%= hole.par %></p>
    <p>Permanent: <%= hole.permanent %></p>
+   <%= link_to "Edit Hole", "/holes/#{hole.id}/edit" %>
 <% end %>
