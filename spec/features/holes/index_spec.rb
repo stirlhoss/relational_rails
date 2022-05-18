@@ -88,5 +88,11 @@ RSpec.describe 'holes index page', type: :feature do
       expect(page).to_not have_content(@hole3.par)
       expect(page).to_not have_content(@hole3.permanent)
     end
+
+    it 'has a link to edit the hole on each hole in the index view' do
+      visit '/holes'
+
+      expect(page).to have_link('Edit Hole')
+    end
   end
 end
