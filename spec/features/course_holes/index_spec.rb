@@ -15,7 +15,7 @@ RSpec.describe 'Course Holes Index', type: :feature do
                           par: 3,
                           permanent: true,
                           course_id: @course1.id)
-    @hole2 = Hole.create!(name: 'Hole 2',
+    @hole2 = Hole.create!(name: 'A different Hole 2',
                           distance_to_pin: 370,
                           par: 4,
                           permanent: true,

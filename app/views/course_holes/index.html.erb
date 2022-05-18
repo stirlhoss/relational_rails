@@ -1,7 +1,8 @@
 <h1><%= @course.name %></h1>
 <body>
     <%= link_to "Create Hole", "/courses/#{@course.id}/holes/new" %>
-    <% @course.holes.each do |hole| %>
+    <%= link_to "Sort Alphabetically", sort: 'alphabetize'  %>
+    <% @holes.each do |hole| %>
         <h3>Name: <%= hole.name %></h3>
         <p>Distance to pin: <%= hole.distance_to_pin %></p>
         <p>Par: <%= hole.par %></p>

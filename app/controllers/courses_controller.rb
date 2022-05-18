@@ -4,7 +4,6 @@ class CoursesController < ApplicationController
   end
 
   def show
-    binding.pry
     @course = Course.find(params[:id])
   end
 

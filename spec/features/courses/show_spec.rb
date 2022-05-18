@@ -44,7 +44,6 @@ RSpec.describe 'course show page ' do
     expect(page).to_not have_content(@course2.name)
 
     expect(page).to_not have_content(@course2.par)
-    expect(page).to_not have_content(@course2.difficulty)
   end
 
   it 'displays a hole count for the course you are looking at' do
