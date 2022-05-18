@@ -1,8 +1,8 @@
-<h1>All Holes</h1>
+<h1>Permanent Holes</h1>
 
-<% @holes.each do |hole| %>
+<% @holes.permanent_holes.each do |hole| %>
    <h3><%= hole.name %></h3>
    <p>Distance to pin: <%= hole.distance_to_pin %> ft. </p>
    <p>Par: <%= hole.par %></p>
    <p>Permanent: <%= hole.permanent %></p>
-    <% end %>
+<% end %>
